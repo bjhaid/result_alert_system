@@ -67,6 +67,7 @@ GEM
     multi_json (1.7.0)
     mysql2 (0.3.11)
     netrc (0.7.7)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -124,6 +125,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   mysql2
+  pg
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
