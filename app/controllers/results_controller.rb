@@ -5,8 +5,8 @@ class ResultsController < ApplicationController
 
   def create
     @result = Result.new(params[:result])
-    @student = student(params[:result]["matric_no"].downcase).id
-    @result[:student_id] = @student.id
+    @student = student(params[:result]["matric_no"].downcase)
+    @result[:student_id] = @student.empty? ? "" : @student.id
       if @result.save
       redirect_to(root_url, :notice => 'Result has been posted successfully')
       StudentMailer.result_email(@student).deliver 
