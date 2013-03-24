@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Result Alert System</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Result Alert System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <% unless alert.nil? %>
+        <div class="alert-message alert">
+          <a class="close" data-dismiss="alert" href="#">&times;</a>
+          The following errors occured:
+          <% alert.messages.each do |k,v| %>
+            <ul>
+              <li><%= "#{k.capitalize} #{v.is_a?(Array) ? v.join(" and ") : v}"%></li>
+            </ul>
+          <% end %>
+        </div>
+      <% end %>
+      <% unless notice.nil? %>
+        <div class="success-message alert">
+          <a class="close" data-dismiss="alert" href="#">&times;</a>
+          <%= notice %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>

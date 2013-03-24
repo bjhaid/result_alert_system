@@ -1,0 +1,32 @@
+<div>
+  <%= form_for(:student, :url => students_path, html: {:class => 'form-horizontal'}) do |f| %>
+    <fieldset>
+      <legend>Register</legend>
+      <div class="control-group">
+        <%= f.label :name, :class => "control-label", for: "inputName" %>
+        <div class="controls">
+          <%= f.text_field :name, :placeholder => "Name e.g Fawole John...", id: "inputName", size:'50' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :email, :class => "control-label", for: "inputEmail" %>
+        <div class="controls">
+          <%= f.text_field :email, :placeholder => "Email e.g a@aol.com", id: "inputEmail" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :matric_no, :class => "control-label", for: "inputMatric" %>
+        <div class="controls">
+          <%= f.text_field :matric_no, :placeholder => "Matric number e.g COM/2012/063", id: "inputMatric" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :phone_number, :class => "control-label", for: "inputPhone" %>
+        <div class="controls">
+          <%= f.text_field :phone_number, :placeholder => "Phone number here e.g 08030000001", id: "inputPhone" %>
+        </div>
+      </div>
+      <%= f.submit "Register", class:"btn" %>
+    </fieldset>
+  <% end %>
+</div>

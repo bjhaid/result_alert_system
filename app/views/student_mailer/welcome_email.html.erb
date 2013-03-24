@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h3>Welcome to resultalerts.com, <%= @student.name %></h3>
+    <p>
+    You have successfully signed up for Result Alert System
+    </p>
+    <p>
+    Your details are as thus:<br />
+    <ol>
+      <li>Name: <%= @student.name.capitalize %></li>
+      <li>Email: <%= @student.email %></li>
+      <li>Matric Number: <%= @student.matric_no %></li>
+      <li>Phone Number: <%= @student.phone_number %></li>
+    </ol>
+    </p>
+    <p>If you have any complaints about your details, contact admin@resultsalert.com </p>
+  </body>
+</html>

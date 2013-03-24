@@ -1,0 +1,7 @@
+#SMS gateway Configuration
+sms_gateway: 
+  username: morafde@yahoo.com
+  email: morafde@yahoo.com 
+  password: eut2250A28
+  url: "http://www.v2nmobile.co.uk/api/httpsms.php"
+  sender: resultalert

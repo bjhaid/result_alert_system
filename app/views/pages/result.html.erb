@@ -1,0 +1,32 @@
+<div>
+  <%= form_for(:result, :url => results_path, html: {:class => 'form-horizontal'}) do |f| %>
+    <fieldset>
+      <legend>Post Result</legend>
+      <div class="control-group">
+        <%= f.label :course_name, :class => "control-label", for: "inputName" %>
+        <div class="controls">
+          <%= f.text_field :course_name, :placeholder => "e.g CSC 401", id: "inputName", size:'50' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :course_title, :class => "control-label", for: "inputEmail" %>
+        <div class="controls">
+          <%= f.text_field :course_title, :placeholder => "e.g Introduction to Logic", id: "inputEmail", class:"input-xxlarge" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :matric_no, :class => "control-label", for: "inputMatric" %>
+        <div class="controls">
+          <%= f.text_field :matric_no, :placeholder => "Matric number e.g COM/2012/063", id: "inputMatric" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :score, :class => "control-label", for: "inputScore" %>
+        <div class="controls">
+          <%= f.text_field :score, type: "number", id: "inputScore", class: "input-mini"%>
+        </div>
+      </div>
+      <%= f.submit "Post Result", class:"btn" %>
+    </fieldset>
+  <% end %>
+</div>
