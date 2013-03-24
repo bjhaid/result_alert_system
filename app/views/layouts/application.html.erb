@@ -15,7 +15,7 @@
           The following errors occured:
           <% alert.messages.each do |k,v| %>
             <ul>
-              <li><%= "#{k.capitalize} #{v.is_a?(Array) ? v.join(" and ") : v}"%></li>
+              <li><%= "#{k.to_s.gsub("_", " ").capitalize} #{v.is_a?(Array) ? v.join(" and ") : v}"%></li>
             </ul>
           <% end %>
         </div>
