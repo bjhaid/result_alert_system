@@ -6,12 +6,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     if @student.save
-      redirect_to do |format|
-        format.html(root_path, :notice => 'Your account has been created')
-      end
+      redirect_to(root_path, :notice => 'Your account has been created')
       StudentMailer.welcome_email(@student).deliver 
       begin
-        #Sms.execute(@student.phone_number, "#{@student.name}, you have successfully registered for the UNIABUJA student alert system")
+        Sms.execute(@student.phone_number, "#{@student.name}, you have successfully registered for the UNIABUJA student alert system")
       rescue => e
         Rail.logger.info e.backtrace
       end

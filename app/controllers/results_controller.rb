@@ -9,7 +9,7 @@ class ResultsController < ApplicationController
     @result[:student_id] = @student.empty? ? "" : @student.id
       if @result.save
       redirect_to(root_path, :notice => 'Result has been posted successfully')
-      StudentMailer.result_email(@student).deliver 
+      #StudentMailer.result_email(@student).deliver 
       begin
         #Sms.execute(@student.phone_number, "#{@student.name}, your results have been sent to your email")
       rescue => e
