@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     if @student.save
-      redirect_to(root_url, :notice => 'Your account has been created')
+      redirect_to(root_path, :notice => 'Your account has been created')
       StudentMailer.welcome_email(@student).deliver 
       begin
         #Sms.execute(@student.phone_number, "#{@student.name}, you have successfully registered for the UNIABUJA student alert system")
