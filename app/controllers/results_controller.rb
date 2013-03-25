@@ -8,7 +8,7 @@ class ResultsController < ApplicationController
     @student = student(params[:result]["matric_no"].downcase)
     @result[:student_id] = @student.empty? ? "" : @student.id
       if @result.save
-      redirect_to(root_url, :notice => 'Result has been posted successfully')
+      redirect_to(root_path, :notice => 'Result has been posted successfully')
       StudentMailer.result_email(@student).deliver 
       begin
         #Sms.execute(@student.phone_number, "#{@student.name}, your results have been sent to your email")
