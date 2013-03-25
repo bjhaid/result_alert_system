@@ -72,7 +72,7 @@ ResultAlertSystem::Application.configure do
     :enable_starttls_auto => true  
   }
   config.action_mailer.default_url_options = {
-    :host => 'fsn-ign.com'
+    :host => 'gmail.com'
   }
   config.action_mailer.perform_deliveries = true #try to force sending in development 
   config.action_mailer.raise_delivery_errors = true 
