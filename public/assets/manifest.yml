@@ -1,9 +1,15 @@
 ---
-rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-25c4f34e21117a43101852988f09af42.js
-application/index.js: application-25c4f34e21117a43101852988f09af42.js
-application.css: application-9a0f01088d6b5a22034383c6f08ebf7a.css
-application/index.css: application-9a0f01088d6b5a22034383c6f08ebf7a.css
+logo.jpg: logo-06fc282a46b9306c42edfb4e9efc40d2.jpg
+logo/index.jpg: logo-06fc282a46b9306c42edfb4e9efc40d2.jpg
+slide01.jpg: slide01-2f9fff90e3526bc80bd6fce13b1bf119.jpg
+slide01/index.jpg: slide01-2f9fff90e3526bc80bd6fce13b1bf119.jpg
+slide02.jpg: slide02-03ea558cdf861d591dc7b403624c49b5.jpg
+slide02/index.jpg: slide02-03ea558cdf861d591dc7b403624c49b5.jpg
+slide03.jpg: slide03-b95c537fc631f854057c9c2065c65f52.jpg
+slide03/index.jpg: slide03-b95c537fc631f854057c9c2065c65f52.jpg
+application.js: application-33baf34d2147458773f9d13154fe8c22.js
+application/index.js: application-33baf34d2147458773f9d13154fe8c22.js
+application.css: application-616ab05806577902b2306c399d5d8a19.css
+application/index.css: application-616ab05806577902b2306c399d5d8a19.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map

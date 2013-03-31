@@ -1,0 +1,7 @@
+<%= @student.name.capitalize %> Results from resultalerts.com
+============================================================
+
+Course Name \t Course Title \t Score
+<% @results.each do |result| %>
+  <%=result.course_name%> \t <%=result.course_title%> \t <%=result.score%>
+<% end %>

@@ -6,12 +6,16 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     if @student.save
-      redirect_to(root_path, :notice => 'Your account has been created')
-      StudentMailer.welcome_email(@student).deliver 
       begin
+        StudentMailer.welcome_email(@student).deliver 
         Sms.execute(@student.phone_number, "#{@student.name}, you have successfully registered for the UNIABUJA student alert system")
+        redirect_to(root_path, :notice => 'Your account has been created')
+      rescue Net::SMTPAuthenticationError => e1
+        Rails.logger.info e1.backtrace
+        redirect_to(root_path, :notice => 'Your account has been created, however there was error sending email')
       rescue => e
-        Rail.logger.info e.backtrace
+        Rails.logger.info e.backtrace
+        redirect_to(root_path, :notice => 'Your account has been created, however there was error sending sms')
       end
     else
       Rails.logger.info @student.errors.messages.inspect

@@ -1,8 +1,38 @@
-<div class="container">
-  <h1>Result Alert System</h1>
-  <div class="row">
-    <div class="span4">
-      <p>Site under construction please check back later</p> 
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+    <%= image_tag "slide01.jpg" %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Register Today.</h1>
+          <p class="lead">Register and get your results delivered to you in real time</p>
+          <%= link_to "Register", register_path, class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+    <%= image_tag "slide02.jpg" %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Receive SMS.</h1>
+          <p class="lead">Get SMS alert immediately your results are ready</p>
+          <%= link_to "Join", register_path, class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+    <%= image_tag "slide03.jpg" %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Receive Emails.</h1>
+          <p class="lead">Get emails with your full result details right on time</p>
+          <%= link_to "Sign up today", register_path, class: "btn btn-large btn-primary" %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <a class="left carousel-control" href="carousel.html#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="right carousel-control" href="carousel.html#myCarousel" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
