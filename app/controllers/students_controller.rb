@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(params[:student])
+    @student[:matric_no] = @student[:matric_no].downcase
     if @student.save
       session[:student_id] = @student.id
       begin

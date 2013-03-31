@@ -4,6 +4,7 @@ ResultAlertSystem::Application.routes.draw do
 
   match 'register' => 'pages#register'
   match 'result' => 'pages#result'
+  match 'profile' => 'pages#profile'
   resource :students
   resource :results
   resource :sessions

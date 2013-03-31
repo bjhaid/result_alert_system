@@ -11,6 +11,7 @@
         <ul class="nav">
           <li class=<%=active_class(root_url)%>><%= link_to "Home", root_url  %></li>
           <li class=<%=active_class(register_path)%>><%= link_to "Register", register_path if current_student.nil? %></li>
+          <li class=<%=active_class(profile_path)%>><%= link_to "Profile", profile_path unless current_student.nil? %></li>
           <li class=<%=active_class(result_path)%>><%= link_to "Post Result", result_path%></li>
         </ul>
         <% if current_student.nil? %>
