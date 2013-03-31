@@ -6,6 +6,10 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
 }
+.welcome_user {
+  color: #fff;
+  font-size: 16px;
+}
 /* CUSTOMIZE THE CAROUSEL
  *     -------------------------------------------------- */
 

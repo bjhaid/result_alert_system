@@ -9,25 +9,22 @@
       <%= link_to "Result Alert System", root_url, class: "brand" %>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><%= link_to "Home", root_url %></li>
-          <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="nav-header">Students</li>
-            <li><%= link_to "Register", register_path %></li>
-            <li><%= link_to "Register", register_path %></li>
-            <li><%= link_to "Register", register_path %></li>
-            <li class="divider"></li>
-            <li class="nav-header">Lecturers</li>
-            <li><%= link_to "Post Results", result_path %></li>
-          </ul>
-          </li>
+          <li class=<%=active_class(root_url)%>><%= link_to "Home", root_url  %></li>
+          <li class=<%=active_class(register_path)%>><%= link_to "Register", register_path if current_student.nil? %></li>
+          <li class=<%=active_class(result_path)%>><%= link_to "Post Result", result_path%></li>
         </ul>
-        <form class="navbar-form pull-right">
-          <input class="span2" type="text" placeholder="Matric No">
-          <input class="span2" type="password" placeholder="Password">
-          <button type="submit" class="btn">Sign in</button>
-        </form>
+        <% if current_student.nil? %>
+          <%= form_for :session, :url => sessions_path, html: {class: "navbar-form pull-right"} do |f| %>
+            <%= f.text_field :matric_no, class:"span2", placeholder:"Matric No" %>
+            <%= f.password_field :password, class:"span2", placeholder:"Password" %>
+            <%= f.submit "Sign in", class: "btn" %>
+          <% end %>
+        <% else %>
+          <div class="pull-right" >
+            <h5 class="welcome_user">Welcome! <%= current_student.name %> <%= link_to "logout", logout_path, class: "btn" %></h5>
+            
+          </div>
+        <% end %>
       </div><!--/.nav-collapse -->
     </div>
   </div>

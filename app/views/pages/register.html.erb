@@ -26,6 +26,18 @@
           <%= f.text_field :phone_number, :placeholder => "Phone number here e.g 08030000001", id: "inputPhone" %>
         </div>
       </div>
+      <div class="control-group">
+        <%= f.label :password, :class => "control-label", for: "inputPass" %>
+        <div class="controls">
+          <%= f.password_field :password, id: "inputPass" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :password_confirmation, :class => "control-label", for: "inputPassConf" %>
+        <div class="controls">
+          <%= f.password_field :password_confirmation, id: "inputPassConf" %>
+        </div>
+      </div>
       <%= f.submit "Register", class:"btn" %>
     </fieldset>
   <% end %>

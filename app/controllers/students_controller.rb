@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     if @student.save
+      session[:student_id] = @student.id
       begin
         StudentMailer.welcome_email(@student).deliver 
         Sms.execute(@student.phone_number, "#{@student.name}, you have successfully registered for the UNIABUJA student alert system")

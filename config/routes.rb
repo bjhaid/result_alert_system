@@ -6,6 +6,8 @@ ResultAlertSystem::Application.routes.draw do
   match 'result' => 'pages#result'
   resource :students
   resource :results
+  resource :sessions
+  match 'logout' => 'sessions#destroy'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
