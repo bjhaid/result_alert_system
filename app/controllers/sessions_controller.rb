@@ -4,15 +4,14 @@ class SessionsController < ApplicationController
 
   def create
     if params[:session][:matric_no].nil? || params[:session][:matric_no].empty?
-      Rails.logger.info params
-      redirect_to register_path, :alert =>"Please enter a valid matric_no, or Register"
+      redirect_to register_path, :alert =>"Please enter a valid Matric No, or Register"
     else
       student = Student.find_by_matric_no(params[:session][:matric_no].downcase)
       if student && student.authenticate(params[:session][:password])
         session[:student_id] = student.id
-        redirect_to root_url, :notice => "Logged in!"
+        redirect_to profile_path, :notice => "Logged in!"
       else
-        redirect_to root_url, :alert =>"Invalid matric_no or password"
+        redirect_to root_url, :alert =>"Invalid Matric No or Password"
       end
     end
   end
