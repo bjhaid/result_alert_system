@@ -14,6 +14,6 @@ class Student < ActiveRecord::Base
   end
 
   def random_password
-    Array.new(10).map { (65 + rand(58)).chr }.join
+    Array.new(10).map { (32 + rand(90)).chr }.join
   end
 end
