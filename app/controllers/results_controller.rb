@@ -16,7 +16,7 @@ class ResultsController < ApplicationController
       redirect_to(root_path, :notice => 'Result has been posted successfully')
       begin
         StudentMailer.result_email(@student).deliver 
-        Sms.execute(@student.phone_number, "#{@student.name}, your results have been sent to your email")
+        Sms.execute(@student.phone_number, "You scored #{@result.score} in #{@result.course_title} #{@result.course_name}")
       rescue Net::SMTPAuthenticationError => e1
         Rails.logger.info e1.backtrace
         redirect_to(root_path, :notice => 'Result has been posted, however there was error sending email')
