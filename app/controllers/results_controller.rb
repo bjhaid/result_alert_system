@@ -6,7 +6,12 @@ class ResultsController < ApplicationController
   def create
     @result = Result.new(params[:result])
     @student = student(params[:result]["matric_no"].downcase)
-    @result[:student_id] = @student.empty? ? "" : @student.id
+    if @student.nil?
+      redirect_to(result_path, :notice => "Student Matric number not found")
+    else
+      @result[:student_id] = @student.id
+    end
+
     if @result.save
       redirect_to(root_path, :notice => 'Result has been posted successfully')
       begin
@@ -30,6 +35,6 @@ class ResultsController < ApplicationController
   private
   def student(matric_no)
     student = Student.find_by_matric_no(matric_no)
-    student.nil? ? "" : student
+    student.nil? ? nil : student
   end
 end
