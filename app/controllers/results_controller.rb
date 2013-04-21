@@ -8,6 +8,7 @@ class ResultsController < ApplicationController
     @student = student(params[:result]["matric_no"].downcase)
     if @student.nil?
       redirect_to(result_path, :notice => "Student Matric number not found")
+      return nil
     else
       @result[:student_id] = @student.id
     end
